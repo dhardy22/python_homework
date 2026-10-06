@@ -1,3 +1,5 @@
+import argparse
+
 #Task 1
 def hello():
     return "Hello!"
@@ -52,9 +54,26 @@ def data_type_conversion(value, data_type):
     except ValueError:
         return f"You can't convert {value} into a {data_type}."
 
+#Task 5
+def grade(*args):
+    try:
+        average = sum(args) / len(args)
+    except Exception:
+        return "Invalid data was provided."
+
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    elif average >= 60:
+        return "D"
+    else:
+        return "F"
 #main line
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 #     print(hello())
 #     print(greet("James"))
 #     print(calc(5,6))
@@ -65,3 +84,9 @@ def data_type_conversion(value, data_type):
 #     print(calc(9,5, "modulo"))
 #     print(calc(10,0,"divide"))
 #     print(calc("first", "second", "multiply"))
+#     print(data_type_conversion("123", "int"))
+#     print(grade("three", "blind", "mice"))
+    print(grade(95, 88, 92))         # A
+    print(grade(72, 65, 80))         # C
+    print(grade(40, 55))             # F
+    print(grade("three", "blind"))   # Invalid data was provided.
