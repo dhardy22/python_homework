@@ -79,8 +79,15 @@ def repeat(string, count):
     for i in range(count):
         result += string 
     return result
-    
 
+#Task 7
+def student_scores(statistic, **kwargs):
+    if statistic == "mean":
+        return sum(kwargs.values()) / len(kwargs)
+    elif statistic == "best":
+        return max(kwargs, key=kwargs.get)
+    else:
+        return f"Invalid statistic: {statistic}"
 #main line
 
 if __name__ == "__main__":
@@ -100,4 +107,5 @@ if __name__ == "__main__":
 #     print(grade(72, 65, 80))         # C
 #     print(grade(40, 55))             # F
 #     print(grade("three", "blind"))   # Invalid data was provided.
-    print(repeat("up", 4))
+#     print(repeat("up", 4))
+    print(student_scores("mean", Tom=75, Dick=89, Angela=91))
