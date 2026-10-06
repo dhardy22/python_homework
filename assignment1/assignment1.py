@@ -19,6 +19,8 @@ def calc(num1, num2, operation="multiply"):
             return num1 / num2
         except ZeroDivisionError:
             return "You can't divide by 0!"
+        except TypeError:
+            return "You can't divide those values!"
 
     elif operation == "add":
         try:
@@ -37,6 +39,8 @@ def calc(num1, num2, operation="multiply"):
             return num1 // num2
         except ZeroDivisionError:
             return "You can't divide by 0!"
+        except TypeError:
+            return "You can't perform integer division on those values!"
 
     elif operation == "power":
         try:
