@@ -71,6 +71,16 @@ def grade(*args):
         return "D"
     else:
         return "F"
+
+#Task 6
+def repeat(string, count):
+    result = ""
+
+    for i in range(count):
+        result += string 
+    return result
+    
+
 #main line
 
 if __name__ == "__main__":
@@ -86,7 +96,8 @@ if __name__ == "__main__":
 #     print(calc("first", "second", "multiply"))
 #     print(data_type_conversion("123", "int"))
 #     print(grade("three", "blind", "mice"))
-    print(grade(95, 88, 92))         # A
-    print(grade(72, 65, 80))         # C
-    print(grade(40, 55))             # F
-    print(grade("three", "blind"))   # Invalid data was provided.
+#     print(grade(95, 88, 92))         # A
+#     print(grade(72, 65, 80))         # C
+#     print(grade(40, 55))             # F
+#     print(grade("three", "blind"))   # Invalid data was provided.
+    print(repeat("up", 4))
