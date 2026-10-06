@@ -1,4 +1,3 @@
-import argparse
 
 #Task 1
 def hello():
@@ -33,6 +32,18 @@ def calc(num1, num2, operation="multiply"):
             return num1 - num2
         except TypeError:
             return "You can't subtract those values!"
+
+    elif operation == "int_divide":
+        try:
+            return num1 // num2
+        except ZeroDivisionError:
+            return "You can't divide by 0!"
+
+    elif operation == "power":
+        try:
+            return num1 ** num2
+        except TypeError:
+            return "You can't raise those values to a power!"
 
     elif operation == "modulo":
         try:
@@ -117,7 +128,7 @@ def pig_latin(string):
     pig_latin_words = []
 
     for word in words:
-        if word[0].lower() in vowels and len(word) > 1:
+        if word[0].lower() in vowels:
             pig_latin_words.append(word + "ay")
         else:
             consonant_cluster = ""
@@ -135,24 +146,28 @@ def pig_latin(string):
     return " ".join(pig_latin_words)
 
 #main line
-#if __name__ == "__main__":
-#     print(hello())
-#     print(greet("James"))
-#     print(calc(5,6))
-#     print(calc(5,6,"add"))
-#     print(calc(20,5,"divide"))
-#     print(calc(14,2.0,"multiply"))
-#     print(calc(12.6, 4.4, "subtract"))
-#     print(calc(9,5, "modulo"))
-#     print(calc(10,0,"divide"))
-#     print(calc("first", "second", "multiply"))
-#     print(data_type_conversion("123", "int"))
-#     print(grade("three", "blind", "mice"))
-#     print(grade(95, 88, 92))         # A
-#     print(grade(72, 65, 80))         # C
-#     print(grade(40, 55))             # F
-#     print(grade("three", "blind"))   # Invalid data was provided.
-#     print(repeat("up", 4))
-#     print(student_scores("mean", Tom=75, Dick=89, Angela=91))
-#     print(titleize("a tale of two cities in the end"))
-# print(hangman("python", "pyth"))
+if __name__ == "__main__":
+    print(hello())
+    print(greet("James"))
+    print(calc(5,6))
+    print(calc(5,6,"add"))
+    print(calc(20,5,"divide"))
+    print(calc(14,2.0,"multiply"))
+    print(calc(12.6, 4.4, "subtract"))
+    print(calc(9,5, "modulo"))
+    print(calc(10,0,"divide"))
+    print(calc(12, 24, "int_divide"))
+    print(calc(2, 3, "power"))
+    print(calc("first", "second", "multiply"))
+    print(data_type_conversion("123", "int"))
+    print(grade("three", "blind", "mice"))
+    print(grade(95, 88, 92))         # A
+    print(grade(72, 65, 80))         # C
+    print(grade(40, 55))             # F
+    print(grade("three", "blind"))   # Invalid data was provided.
+    print(repeat("up", 4))
+    print(student_scores("mean", Tom=75, Dick=89, Angela=91))
+    print(titleize("a tale of two cities in the end"))
+    print(hangman("Encyclopedia", "cyclo"))
+    print(pig_latin("the quick brown fox"))
+
