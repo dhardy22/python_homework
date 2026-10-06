@@ -89,17 +89,19 @@ def student_scores(statistic, **kwargs):
     else:
         return f"Invalid statistic: {statistic}"
 
-#Task 8
+# Task 8
 def titleize(string):
-    # takes a string, returns it capitalized as a book title: first and last words always capitalized;
-    #the "little words" (a, on, an, the, of, and, is, in) stay lowercase in the middle.
-
     little_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
     words = string.split()
-    titleized_words = []    
+    titleized_words = []
 
-    return " ".join([word.capitalize() if (i == 0 or i == len(words) - 1 or word not in little_words) else word for i, word in enumerate(words)])
+    for i, word in enumerate(words):
+        if i == 0 or i == len(words) - 1 or word.lower() not in little_words:
+            titleized_words.append(word.capitalize())
+        else:
+            titleized_words.append(word.lower())
 
+    return " ".join(titleized_words)
 #main line
 
 if __name__ == "__main__":
