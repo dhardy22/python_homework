@@ -110,6 +110,30 @@ def hangman(secret, guess):
             secret = secret.replace(letter, "_")
     return secret
 
+# Task 10
+def pig_latin(string):
+    vowels = "aeiou"
+    words = string.split()
+    pig_latin_words = []
+
+    for word in words:
+        if word[0].lower() in vowels and len(word) > 1:
+            pig_latin_words.append(word + "ay")
+        else:
+            consonant_cluster = ""
+            for letter in word:
+                if letter.lower() not in vowels:
+                    consonant_cluster += letter
+                elif letter.lower() == "u" and consonant_cluster.lower().endswith("q"):
+                    consonant_cluster += letter   # keep the u with the q
+                    break
+                else:
+                    break
+            pig_latin_word = word[len(consonant_cluster):] + consonant_cluster + "ay"
+            pig_latin_words.append(pig_latin_word)
+
+    return " ".join(pig_latin_words)
+
 #main line
 #if __name__ == "__main__":
 #     print(hello())
