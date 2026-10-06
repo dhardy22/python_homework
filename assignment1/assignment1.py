@@ -1,4 +1,3 @@
-
 #Task 1
 def hello():
     return "Hello!"
@@ -164,7 +163,7 @@ if __name__ == "__main__":
     print(grade(95, 88, 92))         # A
     print(grade(72, 65, 80))         # C
     print(grade(40, 55))             # F
-    print(grade("three", "blind"))   # Invalid data was provided.
+    print(grade("fifty", "seventy"))   # Invalid data was provided.
     print(repeat("up", 4))
     print(student_scores("mean", Tom=75, Dick=89, Angela=91))
     print(titleize("a tale of two cities in the end"))
