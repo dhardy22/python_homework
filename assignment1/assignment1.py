@@ -102,9 +102,16 @@ def titleize(string):
             titleized_words.append(word.lower())
 
     return " ".join(titleized_words)
-#main line
 
-if __name__ == "__main__":
+# Task 9
+def hangman(secret, guess):
+    for letter in secret:
+        if letter not in guess:
+            secret = secret.replace(letter, "_")
+    return secret
+
+#main line
+#if __name__ == "__main__":
 #     print(hello())
 #     print(greet("James"))
 #     print(calc(5,6))
@@ -123,5 +130,5 @@ if __name__ == "__main__":
 #     print(grade("three", "blind"))   # Invalid data was provided.
 #     print(repeat("up", 4))
 #     print(student_scores("mean", Tom=75, Dick=89, Angela=91))
-#     print(titleize("after on"))
-
+#     print(titleize("a tale of two cities in the end"))
+# print(hangman("python", "pyth"))
