@@ -59,3 +59,11 @@ def first_name(row_number):
                 print("The 'first_name' column does not exist.")
         else:            
             print(f"Row number {row_number} is out of range.")
+
+# Task 5
+
+def employee_find(employee_id):
+    def employee_match(row):
+        return int(row[column_index("employee_id")]) == employee_id
+    matches = list(filter(employee_match, employees["rows"]))
+    return matches 
