@@ -57,6 +57,5 @@ def first_name(row_number):
                 return row[first_name_index] # step 2 return the value from that row at column_index("first_name")
             else:
                 print("The 'first_name' column does not exist.")
-        else:
+        else:            
             print(f"Row number {row_number} is out of range.")
-
