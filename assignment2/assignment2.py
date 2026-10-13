@@ -44,3 +44,19 @@ employee_lastname_column = column_index("last_name")
 
 print(employee_id_column)
 print(employee_lastname_column)  # Example usage of the function
+
+#Task 4
+
+def first_name(row_number):
+
+    if "rows" in employees: #step 1 get the row at position row_number
+        if 0 <= row_number < len(employees["rows"]):
+            row = employees["rows"][row_number]
+            first_name_index = column_index("first_name")
+            if first_name_index is not None:
+                return row[first_name_index] # step 2 return the value from that row at column_index("first_name")
+            else:
+                print("The 'first_name' column does not exist.")
+        else:
+            print(f"Row number {row_number} is out of range.")
+
