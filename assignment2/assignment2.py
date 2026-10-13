@@ -1,6 +1,6 @@
 import csv 
 
-
+#Task 2
 def read_employees():
 
     empty_dict = {}
@@ -27,3 +27,20 @@ employees = read_employees()
 print(employees)
 
 
+#Task 3
+
+def column_index(name):
+    if "fields" in employees:
+        try:
+            index = employees["fields"].index(name)
+            return index
+        except ValueError:
+            print(f"The column '{name}' does not exist in the CSV file.")
+    else:
+        print("The 'fields' key is missing in the employees dictionary.")
+
+employee_id_column = column_index("employee_id")
+employee_lastname_column = column_index("last_name")
+
+print(employee_id_column)
+print(employee_lastname_column)  # Example usage of the function
