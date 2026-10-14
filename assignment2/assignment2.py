@@ -86,7 +86,6 @@ print(sort_by_last_name())  # Print the original rows
 
 # Task 8
 
-# Task 8
 def employee_dict(row):
     result = {}
     for i in range(len(employees["fields"])):
@@ -98,3 +97,14 @@ def employee_dict(row):
     return result
 
 print(employee_dict(employees["rows"][0]))
+
+# Task 9
+
+def all_employees_dict():
+    result = {}
+    for row in employees["rows"]:
+        employee_id = row[column_index("employee_id")]
+        result[employee_id] = employee_dict(row)
+    return result
+
+print(all_employees_dict())  # Print the dictionary of all employees
