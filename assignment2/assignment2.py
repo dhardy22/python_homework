@@ -187,4 +187,18 @@ def create_minutes_list():
 minutes_list = create_minutes_list()
 print(minutes_list)
 
+def write_sorted_list():
+    minutes_list.sort(key=lambda x: x[1])  # sort minute_list in ascending order by the second element of each tuple (the date)
+    converted = list(map(lambda x: (x[0], x[1].strftime("%B %d, %Y")), minutes_list))  # Use map() again to convert each tuple back to (name, date string) with datetime.strftime(date, "%B %d, %Y")
+
+    with open('./minutes.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(minutes1["fields"])  # Write the header row
+
+        for row in converted:
+            writer.writerow(row)  # Write each row to the CSV file
+    return converted
+write_sorted_list()
+
+
 
