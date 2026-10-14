@@ -84,5 +84,17 @@ def sort_by_last_name():
 
 print(sort_by_last_name())  # Print the original rows
 
+# Task 8
 
+# Task 8
+def employee_dict(row):
+    result = {}
+    for i in range(len(employees["fields"])):
+        key = employees["fields"][i]
+        if key == "employee_id":
+            continue
+        else:
+            result[key] = row[i]
+    return result
 
+print(employee_dict(employees["rows"][0]))
