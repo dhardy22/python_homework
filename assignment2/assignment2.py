@@ -1,6 +1,7 @@
 import csv 
 import os
 import custom_module
+from datetime import datetime
 
 
 #Task 2
@@ -162,7 +163,7 @@ print(minutes2)
 # Task 13
 
 def create_minutes_set():
-    
+
     minutes1, minutes2 = read_minutes()
     minutes_set = set()
 
@@ -175,3 +176,15 @@ def create_minutes_set():
     return minutes_set
 
 minutes_set = create_minutes_set()
+
+#Task 14
+
+def create_minutes_list():
+    minutes_list = list(minutes_set)                       # step 1: set -> list
+    converted = map(lambda x: (x[0], datetime.strptime(x[1], "%B %d, %Y")), minutes_list)   # step 2: given lambda
+    return list(converted)                                 # step 3: map result -> list
+
+minutes_list = create_minutes_list()
+print(minutes_list)
+
+
