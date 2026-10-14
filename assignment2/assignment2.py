@@ -1,4 +1,5 @@
 import csv 
+import os
 
 #Task 2
 def read_employees():
@@ -111,3 +112,6 @@ print(all_employees_dict())  # Print the dictionary of all employees
 
 # Task 10
 
+def get_this_value():
+    THISVALUE = os.getenv("THISVALUE")
+    return THISVALUE
