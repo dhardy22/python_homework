@@ -108,3 +108,6 @@ def all_employees_dict():
     return result
 
 print(all_employees_dict())  # Print the dictionary of all employees
+
+# Task 10
+
