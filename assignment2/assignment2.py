@@ -2,6 +2,7 @@ import csv
 import os
 import custom_module
 
+
 #Task 2
 def read_employees():
 
@@ -158,3 +159,19 @@ minutes1, minutes2 = read_minutes()
 print(minutes1)
 print(minutes2)
 
+# Task 13
+
+def create_minutes_set():
+    
+    minutes1, minutes2 = read_minutes()
+    minutes_set = set()
+
+    for row in minutes1["rows"]:
+        minutes_set.add(tuple(row))  # Add each row as a tuple to the set
+
+    for row in minutes2["rows"]:
+        minutes_set.add(tuple(row))  # Add each row as a tuple to the set
+
+    return minutes_set
+
+minutes_set = create_minutes_set()
