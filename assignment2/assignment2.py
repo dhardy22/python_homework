@@ -125,3 +125,36 @@ def set_that_secret(new_secret):
 set_that_secret("new_secret_value")
 
 print(custom_module.secret)  # Output: new_secret_value
+
+# Task 12
+
+def read_csv_file(path):
+    data = {}
+    rows = []
+    
+    try:
+        with open(path, mode = 'r') as file:
+            csv_reader = csv.reader(file)
+            first_row = True
+
+            for row in csv_reader:
+                if first_row:
+                    data["fields"] = row  # Store the header row
+                    first_row = False
+                else:
+                    rows.append(tuple(row))  # Append the data rows to the list
+        data["rows"] = rows
+        return data
+    except Exception as e:
+        print(f"An exception occurred: {e}")
+        exit()  # Exit the program with a non-zero status to indicate an error
+
+def read_minutes():
+    minutes1 = read_csv_file('../csv/minutes1.csv')
+    minutes2 = read_csv_file('../csv/minutes2.csv')
+    return minutes1, minutes2
+
+minutes1, minutes2 = read_minutes()
+print(minutes1)
+print(minutes2)
+
