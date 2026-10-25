@@ -5,10 +5,9 @@ logger.addHandler(logging.FileHandler("./decorator.log", "a")) # Writes log mess
 
 #Task 1
 def logger_decorator(func):
-    def wrapper(*args, **kwargs):
+    def wrapper(*args, **kwargs,):
         result = func(*args, **kwargs)
-        logger.info(f"function: {func.__name__}, args: {args}, kwargrs: {kwargs}, return: {result}")
+        logger.info(f"function: {func.__name__}, positional parameters: {args}, keyword parameters: {kwargs}, return: {result}")
         return result
     return wrapper
-
 
