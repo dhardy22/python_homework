@@ -17,4 +17,15 @@ def logger_decorator(func):
 def greeting():
     print("Hello World!") 
 
-greeting()
+@logger_decorator
+def check_args(*args):
+    return True
+
+@logger_decorator
+def check_kwargs(**kwargs):
+    return logger_decorator
+
+if __name__ == "__main__":
+    greeting()
+    check_args("first argument", "second argument", "third argument")
+    check_kwargs(name="Don")

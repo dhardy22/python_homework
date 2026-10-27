@@ -1,1 +1,3 @@
 function: greeting, positional parameters: none, keyword parameters: none, return: None
+function: check_args, positional parameters: ('first argument', 'second argument', 'third argument'), keyword parameters: none, return: True
+function: check_kwargs, positional parameters: none, keyword parameters: {'name': 'Don'}, return: <function logger_decorator at 0x104bdf060>
