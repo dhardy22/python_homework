@@ -1,6 +1,7 @@
+# Task 5
+
 import math     
 
-# Task5
 class Point:
     def __init__(self, x, y):
         self.x = x

@@ -1,4 +1,4 @@
-# Task4
+# Task 4
 def make_hangman(secret_word):
     guesses = []                        # remembered between calls
 
@@ -24,3 +24,4 @@ if __name__ == "__main__":
         solved = game(input("Guess a letter: ").lower())   # every turn until solved
 
     print("You got it!")
+

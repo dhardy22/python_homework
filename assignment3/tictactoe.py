@@ -1,4 +1,4 @@
-#Task 6
+# Task 6
 class TictactoeException(Exception):
 
     def __init__(self, message):
