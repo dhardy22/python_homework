@@ -1,5 +1,4 @@
-#Task1
-
+# Task 1
 import logging 
 logger = logging.getLogger(__name__ + "_parameter_log") # Names the logger with the module name and a suffix
 logger.setLevel(logging.INFO) # Similar to a gateway, it filters out messages below the INFO level
