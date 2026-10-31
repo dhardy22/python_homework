@@ -2,59 +2,49 @@ import pandas as pd
 
 # Task 1.1
 data = {
-    "Name": ['Alice', 'Bob', 'Charlie'],
+    "Name": ["Alice", "Bob", "Charlie"],
     "Age": [25, 30, 35],
-    "City": ['New York', 'Los Angeles', 'Chicago']
+    "City": ["New York", "Los Angeles", "Chicago"],
 }
-
 task1_data_frame = pd.DataFrame(data)
 # print(task1_data_frame)
-
+ 
 # Task 1.2
 task1_with_salary = task1_data_frame.copy()
-
 task1_with_salary["Salary"] = [70000, 80000, 90000]
-
 # print(task1_with_salary)
-
+ 
 # Task 1.3
-
 task1_older = task1_with_salary.copy()
-
-task1_older['Age'] = task1_older['Age'] + 1
-
+task1_older["Age"] = task1_older["Age"] + 1
 # print(task1_older)
-
+ 
 # Task 1.4
-
-task1_older.to_csv("/Users/donovanhardy/CTD/python_class/python-da/python_homework/assignment4/employees.csv", index=False)
-
-
+task1_older.to_csv("employees.csv", index=False)
+ 
+ 
 # Task 2.1
-
 task2_employees = pd.read_csv("employees.csv")
 # print(task2_employees)
-
+ 
 # Task 2.2
-# Load the data from a JSON file
-json_employees = pd.read_json('additional_employees.json')
-# print(json_employees.head())
-
+json_employees = pd.read_json("additional_employees.json")
 more_employees = pd.concat([task2_employees, json_employees], ignore_index=True)
-
-# print(more_employees)
-
+print(more_employees)
+ 
+ 
 # Task 3.1
 first_three = more_employees.head(3)
-# print(first_three)
-
+print(first_three)
+ 
 # Task 3.2
-last_two = more_employees.tail(2) 
-# print(last_two)
-
+last_two = more_employees.tail(2)
+print(last_two)
+ 
 # Task 3.3
 employee_shape = more_employees.shape
-# print(employee_shape)
-
-summary = more_employees.info()
-print(summary)
+print(employee_shape)
+ 
+# Task 3.4
+more_employees.info()
+ 
