@@ -23,10 +23,35 @@ task1_older = task1_with_salary.copy()
 
 task1_older['Age'] = task1_older['Age'] + 1
 
-print(task1_older)
+# print(task1_older)
 
 # Task 1.4
 
-task1_older.to_csv("employees.csv", index=False)
+task1_older.to_csv("/Users/donovanhardy/CTD/python_class/python-da/python_homework/assignment4/employees.csv", index=False)
+
+
+# Task 2.1
+
+task2_employees = pd.read_csv("employees.csv")
+# print(task2_employees)
+
+# Task 2.2
+# Load the data from a JSON file
+json_employees = pd.read_json('additional_employees.json')
+# print(json_employees.head())
+
+more_employees = pd.concat([task2_employees, json_employees], ignore_index=True)
+
+# print(more_employees)
+
+# Task 3.1
+first_three = more_employees.head(3)
+print(first_three)
+
+# Task 3.2
+last_two = more_employees.tail(2) 
+print(last_two)
+
+# Task 3.4
 
 
